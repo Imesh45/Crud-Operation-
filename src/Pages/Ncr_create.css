@@ -1,0 +1,41 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+
+.admin{
+    padding-top: 10px;
+    height: 200px;
+}
+
+
+.auditor{
+    padding-top: 50px;
+    float: left;
+    width: 50%;
+    height: 400px;
+    
+
+    
+}
+
+.auditee{
+    padding-top: 50px;
+    float: right;
+    width: 50%;
+    height: 400px;
+    
+}
+.button{
+    position:relative;
+}
+
+
+
+
+.form-floating{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    
+}

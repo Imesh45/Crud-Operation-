@@ -1,0 +1,54 @@
+{"Company_Department":[
+
+    {
+    "id":1,
+    
+    "Company":"",
+    "Department":""
+    },
+     {
+    "id":2,
+    "Company":"DPL",
+    "Department":"HR"
+    },
+     {
+    "id":3,
+    "Company":"DPL",
+    "Department":"PRD"
+    },
+     {
+    "id":4,
+    "Company":"DPL",
+    "Department":"R&D"
+    },
+     {
+    "id":5,
+    "Company":"DPGL",
+    "Department":"DPGL-IT"
+    },
+     {
+    "id":6,
+    "Company":"DPGL",
+    "Department":"DPGL-HR"
+    },
+     {
+    "id":7,
+    "Company":"DPGL",
+    "Department":"DPGL-PRD"
+    },
+     {
+    "id":8,
+    "Company":"DPGL",
+    "Department":"DPGl-R&D"
+    },
+     {
+    "id":9,
+    "Company":"HL",
+    "Department":"HL-IT"
+    },
+     {
+    "id":10,
+    "Company":"HL",
+    "Department":"HL-HR"
+    }
+]}
