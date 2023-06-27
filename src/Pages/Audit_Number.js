@@ -2,8 +2,13 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import Navbar from '../Components/Navbar'
 import './Audit_number.css'
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router'
 
 const Audit_number = () => {
+
+
+const navigate=useNavigate();
 
 
 const [year,SetYear]=useState();
@@ -18,7 +23,7 @@ const [options,setOptions]=useState([]);
 
 
 useEffect(()=>{
-   fetch('http://localhost:7000/Company_Department').then(res=>{
+   fetch('http://localhost:5000/Company_Department').then(res=>{
       return res.json();
    }).then(data=>{
        setOptions(data);
@@ -30,9 +35,30 @@ useEffect(()=>{
 
 const handleNumberSubmit=(e)=>{
   e.preventDefault()
-  const number= year+'-'+company+'-'+department+'-'+randomvalue
+  const number= year+'-'+company+'-'+ department+'-'+randomvalue
   console.log(number)
   alert(number +"Create");
+ 
+  fetch('http://localhost:8080/Audit_Number',{
+    method:"POST",
+    headers:{"content-type":"application/json"},
+    body:JSON.stringify(number)
+  }).then(res=>{
+  console.log(res)
+  Swal.fire({
+    icon: 'success',
+    title: 'Added!',
+    text: ` data has been Added.`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+  navigate("/")
+  }).catch(err=>{
+    console.log(err)
+  })
+
+
+
 
  }
   return (

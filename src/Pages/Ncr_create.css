@@ -27,15 +27,32 @@
     height: 400px;
     
 }
-.button{
-    position:relative;
+.primary{
+    float: right;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
 }
 
 
 
-
 .form-floating{
-    margin-top: 4px;
-    margin-bottom: 4px;
-    
+    padding-top: 5px;
+    border-style: none;
+}
+.form-control{
+    border-color: black;
+    border-style: dashed;
+}
+input{
+    border-color: aqua;
+}
+
+.form-floating>.form-select{
+  
+  border-color: black;
+  border-width: 2px;
+}
+.form-floating>.form-control{
+    border-color: black;
+    border-width: 2px;
 }

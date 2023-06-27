@@ -1,14 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
 import './Ncr_create.css'
-import { useNavigate } from 'react-router';
-import Swal from 'sweetalert2';
+import { useNavigate, useParams } from 'react-router';
 
-const Ncr_create = () => {
+const Update_Ncr = () => {
 
-  const navigate =useNavigate();
-   
+const navigate=useNavigate();
+  const { id }=useParams();
+//  view details 
 
+    useEffect(()=>{
+        fetch("http://localhost:8080/Audit_detail/"+ id).then(res=>{
+           return res.json();
+        }).then(res=>{
+            
+          console.log(res)
+
+          SetAuditno(res.auditno)
+          SetCompany(res.company)
+          SetDepartment(res.departmant)
+          SetAudittype(res.audittype)
+          SetNcrType1(res.ncrtype1)
+          SetQsoReqno(res.qsoreqno)
+          SetQapSopWi(res.qapsopwi)
+          SetAuditDate(res.auditdate)
+          SetAudior(res.auditor)
+          SetResponsiblePerson(res.responsibleperson)
+          SetNcrType2(res.ncrtype2)
+          SetEvidence(res.evidence)
+          SetNonConformity(res.nonconformity)
+          SetCorrection(res.correction)
+          SetNcrCategory(res.ncrcategory)
+          SetRootCause(res.rootcause)
+          SetCorretionAction(res.correction)
+          SetAgreedCompleteDate(res.agreedcompletedate)
+
+      }).catch((err)=>{
+        console.log(err)
+      })
+        },[id])
+
+
+// <----------update data------->
+    
     const[auditno,SetAuditno]=useState();
     const[company,SetCompany]=useState(); 
     const[departmant,SetDepartment]=useState();
@@ -30,40 +64,29 @@ const Ncr_create = () => {
 
 
     const handlesubmit=(e)=>{
-     e.preventDefault()
-     const data={auditno,company,departmant,audittype,ncrtype1,qsoreqno,qapsopwi,auditdate,auditor,responsibleperson,ncrtype2,
-      evidence,nonconformity,correction,ncrcategory,rootcause,correctionaction,agreedcompletedate}
-     console.log(data)
-
-
-    fetch('http://localhost:8080/Audit_detail',{
-      method:"POST",
-      headers:{"content-type":"application/json"},
-      body:JSON.stringify(data)
-    }).then(res=>{
-    console.log(res)
-    Swal.fire({
-      icon: 'success',
-      title: 'Added!',
-      text: ` data has been Added.`,
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    navigate("/")
-    }).catch(err=>{
-      console.log(err)
-    })
+      e.preventDefault()
+      const data={auditno,company,departmant,audittype,ncrtype1,qsoreqno,qapsopwi,auditdate,auditor,responsibleperson,ncrtype2,
+       evidence,nonconformity,correction,ncrcategory,rootcause,correctionaction,agreedcompletedate}
+      console.log(data)
       
+ 
+     fetch('http://localhost:8080/Audit_detail',{
+       method:"POST",
+       headers:{"content-type":"application/json"},
+       body:JSON.stringify(data)
+     }).then(res=>{alert("sucessful")
+     navigate("/")
+    }).catch(err=>{
+       console.log(err)
+     })
+    } 
+    
+ 
+ 
 
-
-
-
-
-
-    }
 
   return (
-    < >
+   < >
         <Navbar/>
       <form onSubmit={handlesubmit}>
         <div className='admin'>
@@ -214,4 +237,7 @@ const Ncr_create = () => {
   )
 }
 
-export default Ncr_create
+
+
+
+export default Update_Ncr

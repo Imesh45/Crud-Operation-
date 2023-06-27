@@ -1,0 +1,11 @@
+{
+  "Audit_detail": [
+    {
+      "auditno": "2022-HL-IT-3",
+      "company": "HL",
+      "departmant": "HR",
+      "audittype": "BRC",
+      "id": 1
+    }
+  ]
+}

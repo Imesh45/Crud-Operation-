@@ -1,15 +1,3 @@
 body{
-    text-align: center;
-    /* background-image: url('/public/Background1.jpg'); */
-    background: linear-gradient(red,transparent),linear-gradient(to top left,lime,transparent),linear-gradient(to top right,blue,transparent);
-    background-position: center;
-    height: 100vh;
-    padding-left: 5%;
-    padding-right: 5%;
-    box-sizing: border-box;
-    position: relative;
-  }
-  
-  
-
-  
+    margin: 0;
+}

@@ -4,8 +4,8 @@
 
 .Audit-Number{
      
-    margin-top: 10%;
-    margin-left: 10%;
+   align-items: center;
+   margin-top: 120px;
     
 }
 
@@ -18,3 +18,7 @@
    
     
 }    
+
+.number{
+    color: black;
+}
